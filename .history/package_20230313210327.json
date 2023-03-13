@@ -66,11 +66,7 @@
     "vite": "^2.6.14"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -78,15 +74,7 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix --cache"
-    ],
-    "*.{css, less}": [
-      "stylelint --fix"
-    ]
-  },
-  "main": "index.js",
-  "repository": "https://github.com/ls365882248/parrot.git",
-  "author": "lihongliang <lihongliang@datagrand.com>",
-  "license": "MIT"
+    "*.{js,jsx,ts,tsx}": ["eslint --fix --cache"],
+    "*.{css, less}": ["stylelint --fix"]
+  }
 }
