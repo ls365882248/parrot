@@ -1,0 +1,22 @@
+# Logs# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+
+# stylelint
+.stylelintcache
+
+# my test
+/test
+
+
+# Mac files
+**/.DS_Store
+
+# idea file
+/.idea/
+
+# typescript cache
+.rpt2_cache/
