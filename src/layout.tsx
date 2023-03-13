@@ -1,5 +1,11 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  Redirect,
+  useHistory,
+  HashRouter as Router,
+} from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Spin } from '@arco-design/web-react';
 import cs from 'classnames';
 import {
@@ -265,24 +271,28 @@ function PageLayout() {
                 </div>
               )}
               <Content>
-                <Switch>
-                  {flattenRoutes.map((route, index) => {
-                    return (
-                      <Route
-                        key={index}
-                        path={`/${route.key}`}
-                        component={route.component}
-                      />
-                    );
-                  })}
-                  <Route exact path="/">
-                    <Redirect to={`/${defaultRoute}`} />
-                  </Route>
-                  <Route
-                    path="*"
-                    component={lazyload(() => import('./pages/exception/403'))}
-                  />
-                </Switch>
+                <Router>
+                  <Switch>
+                    {flattenRoutes.map((route, index) => {
+                      return (
+                        <Route
+                          key={index}
+                          path={`/${route.key}`}
+                          component={route.component}
+                        />
+                      );
+                    })}
+                    <Route exact path="/">
+                      <Redirect to={`/${defaultRoute}`} />
+                    </Route>
+                    <Route
+                      path="*"
+                      component={lazyload(
+                        () => import('./pages/exception/403')
+                      )}
+                    />
+                  </Switch>
+                </Router>
               </Content>
             </div>
             {showFooter && <Footer />}

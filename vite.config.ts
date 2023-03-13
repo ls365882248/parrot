@@ -21,6 +21,14 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    watch: {
+      usePolling: true,
+    },
+    host: true, // Here
+    strictPort: true,
+    port: 8010,
+  },
   css: {
     preprocessorOptions: {
       less: {

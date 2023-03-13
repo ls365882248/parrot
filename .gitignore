@@ -17,6 +17,9 @@
 
 dist
 
+.history
+*/.history
+
 # misc
 .DS_Store
 *.pem

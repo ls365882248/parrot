@@ -51,7 +51,7 @@ function Index() {
     if (checkLogin()) {
       fetchUserInfo();
     } else if (window.location.pathname.replace(/\//g, '') !== 'login') {
-      window.location.pathname = '/login';
+      // window.location.pathname = '/login';
     }
   }, []);
 
