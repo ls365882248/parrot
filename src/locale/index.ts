@@ -1,5 +1,11 @@
 const i18n = {
   'en-US': {
+    'menu.weekly': 'Weekly',
+    'menu.rewrite': 'Rewrite',
+    'menu.abstract': 'Abstract',
+    'menu.email': 'Email',
+    'menu.english_write': 'EnglishWrite',
+    'menu.marketing_write': 'MarketingWrite',
     'menu.welcome': 'Welcome',
     'menu.dashboard': 'Dashboard',
     'menu.list': 'List',
@@ -59,6 +65,12 @@ const i18n = {
     'navbar.search.placeholder': 'Please search',
   },
   'zh-CN': {
+    'menu.weekly': '周报生成',
+    'menu.rewrite': '文章改写',
+    'menu.abstract': '文章摘要',
+    'menu.email': '邮件帮写',
+    'menu.english_write': '英文写作',
+    'menu.marketing_write': '营销文章',
     'menu.dashboard': '仪表盘',
     'menu.list': '列表页',
     'menu.result': '结果页',

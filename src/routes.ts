@@ -9,132 +9,39 @@ export type IRoute = AuthParams & {
   children?: IRoute[];
   // 当前路由是否渲染菜单项，为 true 的话不会在菜单中显示，但可通过路由地址访问。
   ignore?: boolean;
+  link?: string;
 };
 
 export const routes: IRoute[] = [
   {
-    name: 'menu.dashboard',
-    key: 'dashboard',
-    children: [
-      {
-        name: 'menu.dashboard.workplace',
-        key: 'dashboard/workplace',
-      },
-      {
-        name: 'menu.dashboard.monitor',
-        key: 'dashboard/monitor',
-        requiredPermissions: [
-          { resource: 'menu.dashboard.monitor', actions: ['write'] },
-        ],
-      },
-    ],
+    name: 'menu.weekly', // 周报生成
+    key: 'weekly',
+    link: '/dashboard/workplace',
   },
   {
-    name: 'menu.visualization',
-    key: 'visualization',
-    children: [
-      {
-        name: 'menu.visualization.dataAnalysis',
-        key: 'visualization/data-analysis',
-        requiredPermissions: [
-          { resource: 'menu.visualization.dataAnalysis', actions: ['read'] },
-        ],
-      },
-      {
-        name: 'menu.visualization.multiDimensionDataAnalysis',
-        key: 'visualization/multi-dimension-data-analysis',
-        requiredPermissions: [
-          {
-            resource: 'menu.visualization.dataAnalysis',
-            actions: ['read', 'write'],
-          },
-          {
-            resource: 'menu.visualization.multiDimensionDataAnalysis',
-            actions: ['write'],
-          },
-        ],
-        oneOfPerm: true,
-      },
-    ],
+    name: 'menu.rewrite', // 文章改写
+    key: 'rewrite',
+    link: '/dashboard/workplace',
   },
   {
-    name: 'menu.list',
-    key: 'list',
-    children: [
-      {
-        name: 'menu.list.searchTable',
-        key: 'list/search-table',
-      },
-      {
-        name: 'menu.list.cardList',
-        key: 'list/card',
-      },
-    ],
+    name: 'menu.abstract', // 文章摘要
+    key: 'abstract',
+    link: '/dashboard/workplace',
   },
   {
-    name: 'menu.form',
-    key: 'form',
-    children: [
-      {
-        name: 'menu.form.group',
-        key: 'form/group',
-        requiredPermissions: [
-          { resource: 'menu.form.group', actions: ['read', 'write'] },
-        ],
-      },
-      {
-        name: 'menu.form.step',
-        key: 'form/step',
-        requiredPermissions: [
-          { resource: 'menu.form.step', actions: ['read'] },
-        ],
-      },
-    ],
+    name: 'menu.email', // 邮件帮写
+    key: 'email',
+    link: '/dashboard/workplace',
   },
   {
-    name: 'menu.profile',
-    key: 'profile',
-    children: [
-      {
-        name: 'menu.profile.basic',
-        key: 'profile/basic',
-      },
-    ],
-  },
-
-  {
-    name: 'menu.result',
-    key: 'result',
-    children: [
-      {
-        name: 'menu.result.success',
-        key: 'result/success',
-        breadcrumb: false,
-      },
-      {
-        name: 'menu.result.error',
-        key: 'result/error',
-        breadcrumb: false,
-      },
-    ],
+    name: 'menu.english_write', // 英文写作
+    key: 'english_write',
+    link: '/dashboard/workplace',
   },
   {
-    name: 'menu.exception',
-    key: 'exception',
-    children: [
-      {
-        name: 'menu.exception.403',
-        key: 'exception/403',
-      },
-      {
-        name: 'menu.exception.404',
-        key: 'exception/404',
-      },
-      {
-        name: 'menu.exception.500',
-        key: 'exception/500',
-      },
-    ],
+    name: 'menu.marketing_write', // 营销文章
+    key: 'marketing_write',
+    link: '/dashboard/workplace',
   },
   {
     name: 'menu.user',
