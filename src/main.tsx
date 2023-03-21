@@ -6,19 +6,36 @@ import { Provider } from 'react-redux';
 import { ConfigProvider } from '@arco-design/web-react';
 import zhCN from '@arco-design/web-react/es/locale/zh-CN';
 import enUS from '@arco-design/web-react/es/locale/en-US';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {
+  HashRouter,
+  Route,
+  Routes,
+  useLocation,
+  Outlet,
+  Navigate,
+  createHashRouter,
+  RouterProvider,
+  useNavigation,
+} from 'react-router-dom';
 import axios from 'axios';
 import rootReducer from './store';
-import PageLayout from './layout';
 import { GlobalContext } from './context';
-import Login from './pages/login';
 import checkLogin from './utils/checkLogin';
 import changeTheme from './utils/changeTheme';
 import useStorage from './utils/useStorage';
 import './mock';
+import LoginPage from './pages/login';
+import DefaultLayout from './layout';
+
+const PageLayout = () => {
+  return (
+    <DefaultLayout>
+      <Outlet />
+    </DefaultLayout>
+  );
+};
 
 const store = createStore(rootReducer);
-
 function Index() {
   const [lang, setLang] = useStorage('arco-lang', 'en-US');
   const [theme, setTheme] = useStorage('arco-theme', 'light');
@@ -66,32 +83,64 @@ function Index() {
     setTheme,
   };
 
+  const router = createHashRouter([
+    {
+      path: '/login',
+      element: <LoginPage />,
+    },
+    {
+      path: '/',
+      element: <PageLayout />,
+      children: [
+        {
+          path: 'abstract',
+          lazy: () => import('./pages/abstract'),
+        },
+        {
+          path: 'weekly',
+          lazy: () => import('./pages/weekly'),
+        },
+        {
+          path: 'email',
+          lazy: () => import('./pages/email'),
+        },
+        {
+          path: 'english-write',
+          lazy: () => import('./pages/english-write'),
+        },
+        {
+          path: 'marketing-write',
+          lazy: () => import('./pages/marketing-write'),
+        },
+        {
+          path: 'rewrite',
+          lazy: () => import('./pages/rewrite'),
+        },
+      ],
+    },
+  ]);
+
   return (
-    <BrowserRouter>
-      <ConfigProvider
-        locale={getArcoLocale()}
-        componentConfig={{
-          Card: {
-            bordered: false,
-          },
-          List: {
-            bordered: false,
-          },
-          Table: {
-            border: false,
-          },
-        }}
-      >
-        <Provider store={store}>
-          <GlobalContext.Provider value={contextValue}>
-            <Switch>
-              <Route path="/login" component={Login} />
-              <Route path="/" component={PageLayout} />
-            </Switch>
-          </GlobalContext.Provider>
-        </Provider>
-      </ConfigProvider>
-    </BrowserRouter>
+    <ConfigProvider
+      locale={getArcoLocale()}
+      componentConfig={{
+        Card: {
+          bordered: false,
+        },
+        List: {
+          bordered: false,
+        },
+        Table: {
+          border: false,
+        },
+      }}
+    >
+      <Provider store={store}>
+        <GlobalContext.Provider value={contextValue}>
+          <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+        </GlobalContext.Provider>
+      </Provider>
+    </ConfigProvider>
   );
 }
 
