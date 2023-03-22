@@ -16,9 +16,11 @@ export const LayoutHeader = () => {
 
   return (
     <div className="header">
-      <div className="logo">
-        <Logo />
-        <div className="logo-name">Parrot Chat</div>
+      <div className="logo-wrapper">
+        <div className="logo">
+          <Logo />
+          <div className="logo-name">Parrot Chat</div>
+        </div>
       </div>
       <div className="header-menu">
         <a

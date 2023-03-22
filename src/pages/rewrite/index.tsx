@@ -1,3 +1,4 @@
+import { Chat } from '@/components/chat';
 import * as React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
@@ -11,8 +12,7 @@ function Component() {
 
   return (
     <div>
-      <h2>About</h2>
-      <p>{data}</p>
+      <Chat chats={[]} />
     </div>
   );
 }

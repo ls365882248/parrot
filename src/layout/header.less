@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   height: 58px;
-  padding: 0 30px;
+  padding-right: 32px;
   white-space: nowrap;
   border-bottom: 1px solid var(--border-color);
 
@@ -12,25 +12,30 @@
     padding: 0 16px;
   }
 
-  .logo {
+  .logo-wrapper {
     display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    width: 210px;
-    padding-left: 20px;
-  }
+    height: 100%;
+    width: 240px;
+    border-right: 1px solid var(--border-color);
 
-  .logo-name {
-    margin-left: 10px;
-    color: #f9fafb;
-    font-weight: 500;
-    font-size: 20px;
-    font-family: 'PingFang SC';
+    .logo {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 16px;
+    }
+
+    .logo-name {
+      margin-left: 10px;
+      color: #f9fafb;
+      font-weight: 500;
+      font-size: 20px;
+      font-family: 'PingFang SC';
+    }
   }
 
   &-menu {
     display: flex;
-    border-left: 1px solid var(--border-color);
     align-items: center;
 
     a {

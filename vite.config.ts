@@ -28,6 +28,12 @@ export default defineConfig({
     host: true, // Here
     strictPort: true,
     port: 8010,
+    proxy: {
+      '/api': {
+        target: 'http://47.103.101.101/',
+        changeOrigin: true,
+      },
+    },
   },
   css: {
     preprocessorOptions: {
