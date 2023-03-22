@@ -6,7 +6,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const onLogin = () => {
-    navigate('abstract');
+    navigate('/abstract');
   };
 
   return (

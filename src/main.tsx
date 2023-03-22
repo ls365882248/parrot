@@ -124,6 +124,10 @@ function Index() {
         },
       ],
     },
+    {
+      path: '*',
+      element: <LoginPage />,
+    },
   ]);
 
   return (
