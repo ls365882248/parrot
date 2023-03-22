@@ -5,7 +5,7 @@ import CustomTooltip from './customer-tooltip';
 import useBizTheme from '@/utils/useChartTheme';
 
 const lineColor = ['#21CCFF', '#313CA9', '#249EFF'];
-function PeriodLine({ data, loading }: { data: any[]; loading: boolean }) {
+function PeriodLine({ data, loading }: { data: ISafeAny[]; loading: boolean }) {
   return (
     <Spin loading={loading} style={{ width: '100%' }}>
       <Chart
@@ -16,7 +16,7 @@ function PeriodLine({ data, loading }: { data: any[]; loading: boolean }) {
         data={data}
         autoFit
         scale={{ time: 'time' }}
-        className={'chart-wrapper'}
+        className="chart-wrapper"
       >
         <Line shape="smooth" position="time*rate" color={['name', lineColor]} />
         <Tooltip crosshairs={{ type: 'x' }} showCrosshairs shared>

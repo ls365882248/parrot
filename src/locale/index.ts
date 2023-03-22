@@ -47,6 +47,7 @@ const i18n = {
     'settings.otherSettings': 'Other Settings',
     'settings.colorWeek': 'Color Week',
     'settings.alertContent':
+      // eslint-disable-next-line max-len
       'After the configuration is only temporarily effective, if you want to really affect the project, click the "Copy Settings" button below and replace the configuration in settings.json.',
     'settings.copySettings': 'Copy Settings',
     'settings.copySettings.message':

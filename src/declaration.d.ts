@@ -3,6 +3,9 @@ declare module '*.svg' {
   export default content;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ISafeAny = any;
+
 declare module '*.less' {
   const classes: { [className: string]: string };
   export default classes;

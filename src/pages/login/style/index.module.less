@@ -8,16 +8,16 @@
   }
 
   .content {
-    flex: 1;
     position: relative;
+    flex: 1;
     padding-bottom: 40px;
   }
 
   .footer {
-    width: 100%;
     position: absolute;
-    bottom: 0;
     right: 0;
+    bottom: 0;
+    width: 100%;
   }
 }
 
@@ -25,33 +25,33 @@
   position: fixed;
   top: 24px;
   left: 22px;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
-  z-index: 1;
 
   &-text {
-    margin-left: 4px;
     margin-right: 4px;
-    font-size: 20px;
+    margin-left: 4px;
     color: var(--color-fill-1);
+    font-size: 20px;
   }
 }
 
 .banner {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   &-inner {
-    height: 100%;
     flex: 1;
+    height: 100%;
   }
 }
 
 .content {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .carousel {
@@ -60,28 +60,28 @@
   &-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100%;
   }
 
   &-title {
+    color: var(--color-fill-1);
     font-weight: 500;
     font-size: 20px;
     line-height: 28px;
-    color: var(--color-fill-1);
   }
 
   &-sub-title {
     margin-top: 8px;
+    color: var(--color-text-3);
     font-size: 14px;
     line-height: 22px;
-    color: var(--color-text-3);
   }
 
   &-image {
-    margin-top: 30px;
     width: 320px;
+    margin-top: 30px;
   }
 }
 
@@ -91,22 +91,22 @@
   }
 
   &-title {
-    font-size: 24px;
-    font-weight: 500;
     color: var(--color-text-1);
+    font-weight: 500;
+    font-size: 24px;
     line-height: 32px;
   }
 
   &-sub-title {
+    color: var(--color-text-3);
     font-size: 16px;
     line-height: 24px;
-    color: var(--color-text-3);
   }
 
   &-error-msg {
     height: 32px;
-    line-height: 32px;
     color: rgb(var(--red-6));
+    line-height: 32px;
   }
 
   &-password-actions {

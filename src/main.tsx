@@ -24,8 +24,8 @@ import checkLogin from './utils/checkLogin';
 import changeTheme from './utils/changeTheme';
 import useStorage from './utils/useStorage';
 import './mock';
-import LoginPage from './pages/login';
-import DefaultLayout from './layout';
+import LoginPage from './pages/login-v2';
+import DefaultLayout from './layout/index';
 
 const PageLayout = () => {
   return (

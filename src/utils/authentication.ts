@@ -4,10 +4,10 @@
 
 export type UserPermission = Record<string, string[]>;
 
-type Auth = {
+interface Auth {
   resource: string | RegExp;
   actions?: string[];
-};
+}
 
 export interface AuthParams {
   requiredPermissions?: Array<Auth>;

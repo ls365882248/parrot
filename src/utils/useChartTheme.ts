@@ -10,7 +10,7 @@ G2.registerTheme('darkTheme', {
 });
 
 function useBizTheme() {
-  const theme = useSelector((state: any) => state.theme);
+  const theme = useSelector((state: ISafeAny) => state.theme);
   const themeName = theme === 'dark' ? 'darkTheme' : 'light';
   const [themeObj, setThemeObj] = useState(G2.getTheme(themeName));
 

@@ -17,7 +17,7 @@ function FactMultiPie(props: FactMultiPieProps) {
       height={props.height || 400}
       padding={[0, 0, 10, 0]}
     >
-      <Legend visible={true} />
+      <Legend visible />
       <Facet
         fields={['category']}
         type="rect"

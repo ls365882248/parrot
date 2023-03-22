@@ -3,7 +3,13 @@ import { Chart, Tooltip, Interval, Axis, Legend } from 'bizcharts';
 import { Spin } from '@arco-design/web-react';
 import CustomTooltip from './customer-tooltip';
 
-function MultiInterval({ data, loading }: { data: any[]; loading: boolean }) {
+function MultiInterval({
+  data,
+  loading,
+}: {
+  data: ISafeAny[];
+  loading: boolean;
+}) {
   return (
     <Spin loading={loading} style={{ width: '100%' }}>
       <Chart
@@ -11,7 +17,7 @@ function MultiInterval({ data, loading }: { data: any[]; loading: boolean }) {
         padding="auto"
         data={data}
         autoFit
-        className={'chart-wrapper'}
+        className="chart-wrapper"
       >
         <Interval
           adjust="stack"

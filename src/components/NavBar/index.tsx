@@ -70,6 +70,7 @@ function Navbar({ show }: { show: boolean }) {
         },
       },
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [role]);
 
   if (!show) {

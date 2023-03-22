@@ -1,4 +1,7 @@
-**/*.ts
-**/*.tsx
-**/*.jsx
+dist/*
+public/*
+node_modules/*
 **/*.js
+**/*.jsx
+**/*.tsx
+README.md

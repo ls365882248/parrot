@@ -21,7 +21,7 @@ function MultiAreaLine({ data, loading }: { data: any[]; loading: boolean }) {
         padding={[10, 0, 30, 30]}
         autoFit
         scale={{ time: 'time' }}
-        className={'chart-wrapper'}
+        className="chart-wrapper"
       >
         <Line
           shape="smooth"
@@ -34,12 +34,7 @@ function MultiAreaLine({ data, loading }: { data: any[]; loading: boolean }) {
           color={['name', areaColorMap]}
           tooltip={false}
         />
-        <Tooltip
-          crosshairs={{ type: 'x' }}
-          showCrosshairs
-          shared
-          showMarkers={true}
-        >
+        <Tooltip crosshairs={{ type: 'x' }} showCrosshairs shared showMarkers>
           {(title, items) => {
             return (
               <CustomTooltip
