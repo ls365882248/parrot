@@ -24,8 +24,14 @@ import checkLogin from './utils/checkLogin';
 import changeTheme from './utils/changeTheme';
 import useStorage from './utils/useStorage';
 import './mock';
+import loadable from '@loadable/component';
 import LoginPage from './pages/login-v2';
 import DefaultLayout from './layout/index';
+
+const AbstractPage = loadable(() => import('./pages/abstract'));
+const WeeklyPage = loadable(() => import('./pages/weekly'));
+const RewritePage = loadable(() => import('./pages/rewrite'));
+const EmailPage = loadable(() => import('./pages/email'));
 
 const PageLayout = () => {
   return (
@@ -94,15 +100,15 @@ function Index() {
       children: [
         {
           path: 'abstract',
-          lazy: () => import('./pages/abstract'),
+          element: <AbstractPage />,
         },
         {
           path: 'weekly',
-          lazy: () => import('./pages/weekly'),
+          element: <WeeklyPage />,
         },
         {
           path: 'email',
-          lazy: () => import('./pages/email'),
+          element: <EmailPage />,
         },
         {
           path: 'english-write',
@@ -114,7 +120,7 @@ function Index() {
         },
         {
           path: 'rewrite',
-          lazy: () => import('./pages/rewrite'),
+          element: <RewritePage />,
         },
       ],
     },

@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
+import './container.less';
 
-export const LayoutContainer = () => {
-  return <div className="main-container">hello</div>;
+export const LayoutContainer = (props) => {
+  return <div className="main-container">{props.children}</div>;
 };

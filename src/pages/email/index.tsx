@@ -6,7 +6,7 @@ export async function loader() {
   return 'I came from the About.tsx loader function!';
 }
 
-export function Component() {
+function Component() {
   const data = useLoaderData() as string;
 
   return (
@@ -17,4 +17,4 @@ export function Component() {
   );
 }
 
-Component.displayName = 'EmailPage';
+export default Component;

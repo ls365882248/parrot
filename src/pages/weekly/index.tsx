@@ -5,8 +5,7 @@ export async function loader() {
   await new Promise((r) => setTimeout(r, 500));
   return 'I came from the About.tsx loader function!';
 }
-
-export function Component() {
+function Component() {
   const data = useLoaderData() as string;
 
   return (
@@ -16,5 +15,4 @@ export function Component() {
     </div>
   );
 }
-
-Component.displayName = 'WeeklyPage';
+export default Component;

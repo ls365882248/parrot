@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { useNavigate } from 'react-router';
 import './menu.less';
 
 export const LayoutMenu = () => {

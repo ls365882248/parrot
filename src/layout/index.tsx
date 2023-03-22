@@ -1,14 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Layout, Menu } from '@arco-design/web-react';
 import './index.less';
 import { LayoutHeader } from './header';
 import { LayoutMenu } from './menu';
 import { LayoutContainer } from './container';
-
-const MenuItem = Menu.Item;
-
-const Sider = Layout.Sider;
 
 function PageLayout(props) {
   return (
@@ -28,7 +23,7 @@ function PageLayout(props) {
       <LayoutHeader />
       <div className="wrapper">
         <LayoutMenu />
-        <LayoutContainer />
+        <LayoutContainer>{props.children}</LayoutContainer>
       </div>
     </div>
   );

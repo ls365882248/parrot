@@ -1,9 +1,19 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from '@/assets/logo.svg';
 import './header.less';
+import { useNavigate, useLocation } from 'react-router-dom';
+import cls from 'classnames';
 
 export const LayoutHeader = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [activePath, setActivePath] = useState<string>('');
+
+  useEffect(() => {
+    setActivePath(location.pathname);
+  }, [location]);
+
   return (
     <div className="header">
       <div className="logo">
@@ -11,16 +21,36 @@ export const LayoutHeader = () => {
         <div className="logo-name">Parrot Chat</div>
       </div>
       <div className="header-menu">
-        <a className="menu-link is-active" href="#">
+        <a
+          className={cls('menu-link', {
+            'is-active': activePath.includes('weekly'),
+          })}
+          href="/#/weekly"
+        >
           周报生成
         </a>
-        <a className="menu-link notify" href="#">
+        <a
+          className={cls('menu-link', {
+            'is-active': activePath.includes('rewrite'),
+          })}
+          href="/#/rewrite"
+        >
           文章改写
         </a>
-        <a className="menu-link" href="#">
+        <a
+          className={cls('menu-link', {
+            'is-active': activePath.includes('abstract'),
+          })}
+          href="/#/abstract"
+        >
           文章摘要
         </a>
-        <a className="menu-link notify" href="#">
+        <a
+          className={cls('menu-link', {
+            'is-active': activePath.includes('email'),
+          })}
+          href="/#/email"
+        >
           邮件帮写
         </a>
       </div>

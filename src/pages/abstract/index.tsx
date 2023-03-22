@@ -11,7 +11,7 @@ export async function loader() {
   return 'I came from the About.tsx loader function!';
 }
 
-export function Component() {
+function Component() {
   const data = useLoaderData() as string;
   return (
     <div style={{ height: '10000px' }}>
@@ -38,4 +38,4 @@ export function Component() {
   );
 }
 
-Component.displayName = 'AbstractPage';
+export default Component;
