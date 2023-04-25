@@ -31,7 +31,7 @@ export const LayoutHeader = () => {
         >
           周报生成
         </a>
-        <a
+        {/* <a
           className={cls('menu-link', {
             'is-active': activePath.includes('rewrite'),
           })}
@@ -54,12 +54,12 @@ export const LayoutHeader = () => {
           href="/#/email"
         >
           邮件帮写
-        </a>
+        </a> */}
       </div>
       {/* <div className="search-bar">
         <input type="text" placeholder="Search" />
       </div> */}
-      <div className="header-profile">
+      {/* <div className="header-profile">
         <div className="notification">
           <span className="notification-number">3</span>
           <svg
@@ -82,7 +82,7 @@ export const LayoutHeader = () => {
           src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
           alt=""
         />
-      </div>
+      </div> */}
     </div>
   );
 };
