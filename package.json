@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "init": "vercel init vite",
     "build": "vite build",
-    "docker-build": "docker build -t dockerhub.datagrand.com/voc/fe_document:ci_20221101_manual-image-1 -f build/Dockerfile .",
+    "docker-build": "docker build -t registry.cn-shanghai.aliyuncs.com/parrot_prompt:ci_20221101_manual-image-1 -f build/Dockerfile .",
     "eslint": "eslint src/ --ext .ts,.tsx,.js,.jsx --fix --cache",
     "stylelint": "stylelint 'src/**/*.less' 'src/**/*.css' --fix --cache",
     "pre-commit": "pretty-quick --staged && npm run eslint && npm run stylelint",
