@@ -23,13 +23,26 @@ function Component() {
       refreshDeps: [params],
     }
   );
+  const [chats, setChats] = React.useState<IChat[]>([]);
+
+  React.useEffect(() => {
+    if (!error) return;
+    chats.pop();
+    setChats([
+      ...chats,
+      {
+        text: '生成失败',
+        time: dayjs().format('HH:mm'),
+      },
+    ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [error, chats.length]);
 
   React.useEffect(() => {
     if (params) {
       run();
     }
   }, [params, run]);
-  const [chats, setChats] = React.useState<IChat[]>([]);
 
   React.useEffect(() => {
     const text = get(data, 'data.result', '');
