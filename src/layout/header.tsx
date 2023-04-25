@@ -25,9 +25,10 @@ export const LayoutHeader = () => {
       <div className="header-menu">
         <a
           className={cls('menu-link', {
-            'is-active': activePath.includes('weekly'),
+            'is-active': true,
+            // 'is-active': activePath.includes('weekly'),
           })}
-          href="/#/weekly"
+          // href="/weekly"
         >
           周报生成
         </a>

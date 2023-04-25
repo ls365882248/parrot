@@ -16,6 +16,7 @@ import {
   createHashRouter,
   RouterProvider,
   useNavigation,
+  createBrowserRouter,
 } from 'react-router-dom';
 import axios from 'axios';
 import rootReducer from './store';
@@ -36,7 +37,8 @@ const EmailPage = loadable(() => import('./pages/email'));
 const PageLayout = () => {
   return (
     <DefaultLayout>
-      <Outlet />
+      {/* <Outlet /> */}
+      <WeeklyPage />
     </DefaultLayout>
   );
 };
@@ -89,7 +91,7 @@ function Index() {
     setTheme,
   };
 
-  const router = createHashRouter([
+  const router = createBrowserRouter([
     {
       path: '/login',
       element: <LoginPage />,
@@ -97,32 +99,36 @@ function Index() {
     {
       path: '/',
       element: <PageLayout />,
-      children: [
-        {
-          path: 'abstract',
-          element: <AbstractPage />,
-        },
-        {
-          path: 'weekly',
-          element: <WeeklyPage />,
-        },
-        {
-          path: 'email',
-          element: <EmailPage />,
-        },
-        {
-          path: 'english-write',
-          lazy: () => import('./pages/english-write'),
-        },
-        {
-          path: 'marketing-write',
-          lazy: () => import('./pages/marketing-write'),
-        },
-        {
-          path: 'rewrite',
-          element: <RewritePage />,
-        },
-      ],
+      // children: [
+      //   {
+      //     path: 'abstract',
+      //     element: <AbstractPage />,
+      //   },
+      //   {
+      //     path: 'weekly',
+      //     element: <WeeklyPage />,
+      //   },
+      //   {
+      //     path: 'email',
+      //     element: <EmailPage />,
+      //   },
+      //   {
+      //     path: 'english-write',
+      //     lazy: () => import('./pages/english-write'),
+      //   },
+      //   {
+      //     path: 'marketing-write',
+      //     lazy: () => import('./pages/marketing-write'),
+      //   },
+      //   {
+      //     path: 'rewrite',
+      //     element: <RewritePage />,
+      //   },
+      //   {
+      //     path: '*',
+      //     element: <WeeklyPage />,
+      //   },
+      // ],
     },
     {
       path: '*',

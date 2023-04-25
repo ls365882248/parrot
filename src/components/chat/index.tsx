@@ -80,6 +80,11 @@ export const Chat = (props: IProps) => {
               className="send-button"
               disabled={loading}
               onClick={onSend}
+              style={{
+                marginRight: '4px',
+                minWidth: '40px',
+                width: '60px',
+              }}
             >
               {loading ? '生成中...' : '生成'}
             </Button>
